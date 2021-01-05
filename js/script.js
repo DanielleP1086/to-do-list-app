@@ -10,4 +10,8 @@ function newItem(){
   } else {
     let list = $('#list');
     li.append(inputValue);}
+
+    li.on("click", function() {
+    li.addClass("strike");
+  });
   }
