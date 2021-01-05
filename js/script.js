@@ -14,4 +14,11 @@ function newItem(){
     li.on("click", function() {
     li.addClass("strike");
   });
+
+  let crossOutButton = $('<button class="crossOutButton">X</button>');
+  $('li').append(crossOutButton);
+
+  crossOutButton.on("click", function() {
+     li.addClass("delete");
+    });
   }
