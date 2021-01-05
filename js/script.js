@@ -10,15 +10,22 @@ function newItem(){
   } else {
     let list = $('#list');
     li.append(inputValue);}
-
-    li.on("click", function() {
+//strike through list item
+  li.on("click", function() {
     li.addClass("strike");
   });
 
-  let crossOutButton = $('<button class="crossOutButton">X</button>');
+//add 'X' button for deleteListItem
+  let crossOutButton = $('<button class="crossOutButton"></button>');
+  crossOutButton.append(document.createTextNode ('X'));
   $('li').append(crossOutButton);
 
-  crossOutButton.on("click", function() {
-     li.addClass("delete");
-    });
+//add event listener to deleteListItem
+    crossOutButton.on("click", deleteListItem);
+    function deleteListItem(){
+    li.addClass("delete")
+  }
+
+//make list sortable
+    $('#list').sortable();
   }
